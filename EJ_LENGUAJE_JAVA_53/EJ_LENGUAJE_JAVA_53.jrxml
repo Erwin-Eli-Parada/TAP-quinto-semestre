@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EJ_LENGUAJE_JAVA_53" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8737cf1e-e49a-4096-ac49-e154f1a4514a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="184"/>
+	<queryString language="SQL">
+		<![CDATA[select *
+from  manempsa.Servicios inner join manempsa.Clientes on manempsa.Servicios.CIF=manempsa.Clientes.CIF
+where manempsa.Clientes.Cif='B11223212' order by fecha asc;]]>
+	</queryString>
+	<field name="numero" class="java.lang.Integer"/>
+	<field name="fecha" class="java.sql.Date"/>
+	<field name="tipo" class="java.lang.String"/>
+	<field name="cantidad" class="java.lang.Integer"/>
+	<field name="comentario" class="java.lang.String"/>
+	<field name="dni" class="java.lang.String"/>
+	<field name="cif" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="direccion" class="java.lang.String"/>
+	<field name="tfno1" class="java.lang.Long"/>
+	<field name="rfno2" class="java.lang.Long"/>
+	<group name="fecha">
+		<groupExpression><![CDATA[$F{fecha}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement x="156" y="10" width="249" height="38" uuid="2fb344b6-dcab-4ea9-905d-8d57d7e2b7a9"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[NOTA DE SERVICIOS SEGASA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="102" splitType="Stretch">
+			<frame>
+				<reportElement x="100" y="1" width="192" height="101" uuid="4c1af285-6f73-4fc2-aa77-6fc4021f9501"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="0" width="79" height="20" uuid="e7f4631e-6f88-42ad-a324-c01151ad1e23"/>
+					<text><![CDATA[CIF:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="20" width="79" height="20" uuid="4322add7-7c88-4f6d-ac9c-e42b4f549436"/>
+					<text><![CDATA[NOMBRE:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="40" width="79" height="20" uuid="9402442e-a284-49c5-9839-d3371f3eedd4"/>
+					<text><![CDATA[DIRECCIÓN:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="60" width="79" height="20" uuid="f0a29369-b705-4245-947e-0802e0a7db8e"/>
+					<text><![CDATA[TELEFONO 1:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="80" width="79" height="20" uuid="c674c125-933e-4b81-a634-c80ab765aac6"/>
+					<text><![CDATA[TELEFONO 2:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="79" y="0" width="100" height="20" uuid="03fd58f4-6ad8-4b03-92fb-313007490359"/>
+					<textFieldExpression><![CDATA[$F{cif}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="79" y="20" width="100" height="20" uuid="772494f6-7371-4e23-8309-974db3f6b1cd"/>
+					<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="79" y="40" width="100" height="20" uuid="5f100bc5-bfd5-48b0-b4ca-a6cb6eddb94f"/>
+					<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="79" y="60" width="100" height="20" uuid="c3aefd05-7f21-4c5d-aa57-5295aaa035ad"/>
+					<textFieldExpression><![CDATA[$F{tfno1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="79" y="80" width="100" height="20" uuid="32e73b77-4920-4b1a-ba89-637143433e7a"/>
+					<textFieldExpression><![CDATA[$F{rfno2}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<image>
+				<reportElement x="346" y="1" width="161" height="101" uuid="ec8d24b1-2b8f-4da8-ba10-585f9959302e"/>
+				<imageExpression><![CDATA["C:\\Users\\ELI\\Pictures\\Nueva carpeta\\puchamon.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="26" y="19" width="110" height="27" uuid="676e30de-5ae9-44af-949f-e8a1f6f9642b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Fecha del servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="219" y="19" width="112" height="27" uuid="76bc284d-4964-43dd-b918-9f2e8cb59918"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="395" y="19" width="125" height="27" uuid="eeecc2cc-34e9-46d1-a1ed-923155a89efb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="46" width="555" height="1" uuid="6a507cc6-1c57-4107-8b3c-762b1de570a4"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="52" splitType="Stretch">
+			<textField>
+				<reportElement x="26" y="12" width="110" height="20" uuid="95457f2d-854c-44fd-b80a-3816e5b095ea"/>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="219" y="12" width="112" height="20" uuid="388a26ba-203f-4ec3-899d-cfacaa296f16"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{tipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="395" y="12" width="125" height="20" uuid="ee691b9c-5361-40f8-8c17-29e822156616"/>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="26" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="11" width="555" height="1" uuid="0fc72025-5eff-4928-8e09-4ba9a6b2dc4a"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="78" splitType="Stretch">
+			<staticText>
+				<reportElement x="179" y="0" width="209" height="76" uuid="c2343e9e-ecdb-425f-b4af-05c0b963ff26"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[MANEMPSA
+Mantenimiento Integral a Empresas
+
+Polígono Industrial Norte, C/ Bonanza 3
+11404 Jerez (Cádiz)
+]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
